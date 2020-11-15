@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 配置文件实现
  */
-public class XmlImpl {
+public class TestImpl {
 
     public static void main(String[] args) {
         xmlImpl();
