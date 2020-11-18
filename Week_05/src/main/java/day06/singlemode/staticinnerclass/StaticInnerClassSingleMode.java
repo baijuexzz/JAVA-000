@@ -1,4 +1,4 @@
-package creationMode.singleMode.staticinnerclass;
+package day06.singlemode.staticinnerclass;
 
 import java.io.Serializable;
 

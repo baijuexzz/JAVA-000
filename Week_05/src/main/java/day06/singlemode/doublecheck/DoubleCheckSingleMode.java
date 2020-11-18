@@ -53,7 +53,7 @@ public class DoubleCheckSingleMode {
         //创建
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         CountDownLatch countDownLatch = new CountDownLatch(10);
-        Set<DoubleCheckSingleMode> doubleCheckSingleModeSet=new HashSet<>();
+        Set<DoubleCheckSingleMode> doubleCheckSingleModeSet=new HashSet<DoubleCheckSingleMode>();
         for (int i = 0; i < 10; i++) {
             executorService.submit(() -> {
                 countDownLatch.countDown();

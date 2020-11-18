@@ -42,7 +42,7 @@ public class HungryTest {
     //JAVA反射机制测试单例
     //JAVA的反射机制可以强制访问私有方法或私有变量，所有方法或变量即使设置成为private修饰也会被访问到
     private static void testSingleModeByreflection() throws IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
-        Class<?> hungrySingleModeClass = Class.forName("creationMode.singleMode.hungray.HungrySingleMode");
+        Class<?> hungrySingleModeClass = Class.forName("day06.singlemode.hungray.HungrySingleMode");
         Constructor<?>[] constructors = hungrySingleModeClass.getDeclaredConstructors();
         for (Constructor<?> constructor : constructors) {
             constructor.setAccessible(true);

@@ -1,6 +1,8 @@
-package creationMode.singleMode.staticinnerclass;
+package day06.singlemode.staticinnerclass;
 
 
+
+import day06.singlemode.staticinnerclass.StaticInnerClassSingleMode;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
@@ -46,7 +48,7 @@ public class StaticInnerClassTest {
     //JAVA反射机制测试单例
     //JAVA的反射机制可以强制访问私有方法或私有变量，所有方法或变量即使设置成为private修饰也会被访问到
     private static void testSingleModeByreflection() throws IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
-        Class<?> staticInnerSingleMode = Class.forName("creationMode.singleMode.staticinnerclass.StaticInnerClassSingleMode");
+        Class<?> staticInnerSingleMode = Class.forName("day06.singlemode.staticinnerclass.StaticInnerClassSingleMode");
         Constructor<?>[] constructors = staticInnerSingleMode.getDeclaredConstructors();
         for (Constructor<?> constructor : constructors) {
             //设置私有构造也可访问
