@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:klazz="http://www.baijue.cn/schema/klazz"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.baijue.cn/schema/klazz
+        http://www.baijue.cn/schema/klazz/diy.xsd">
+
+    <!--
+        命名空間
+        http://www.baijue.cn/schema/klazz
+        xsd配置
+        http://www.baijue.cn/schema/klazz/diy.xsd
+    -->
+
+
+</beans>
