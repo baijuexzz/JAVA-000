@@ -2,6 +2,7 @@
 #电商简易SQL
 -- ----------------------------
 ##订单表
+```
 DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order`  (
   `id` int(11) NOT NULL COMMENT '订单id',
@@ -16,8 +17,10 @@ CREATE TABLE `t_order`  (
   `update_time` int(13) NOT NULL COMMENT '修改时间 此处应该有一张 订单状态更改表 暂时不添加',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
+```
 -- ----------------------------
 ##订单商品表
+```
 DROP TABLE IF EXISTS `t_order_product`;
 CREATE TABLE `t_order_product`  (
   `id` int(11) NOT NULL COMMENT '订单商品ID',
@@ -33,9 +36,10 @@ CREATE TABLE `t_order_product`  (
   `update_time` int(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单商品表' ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##购物车表
+```
 DROP TABLE IF EXISTS `t_order_cart_item`;
 CREATE TABLE `t_order_cart_item`  (
   `id` int(11) NOT NULL COMMENT '购物车ID',
@@ -49,8 +53,10 @@ CREATE TABLE `t_order_cart_item`  (
   `update_time` int(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '购物车表' ROW_FORMAT = Dynamic;
+```
 -- ----------------------------
 ##商品表
+```
 DROP TABLE IF EXISTS `t_product`;
 CREATE TABLE `t_product`  (
   `id` int(11) NOT NULL COMMENT '商品ID',
@@ -60,9 +66,10 @@ CREATE TABLE `t_product`  (
   `product_brand_id` int(11) NOT NULL COMMENT '商品对应卖家ID',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品主表 可增加字段进行适当冗余' ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##商品SKU表
+```
 DROP TABLE IF EXISTS `t_product_sku`;
 CREATE TABLE `t_product_sku`  (
   `id` int(11) NOT NULL COMMENT 'sku表id',
@@ -75,9 +82,10 @@ CREATE TABLE `t_product_sku`  (
   `update_time` bigint(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##商品属性表
+```
 DROP TABLE IF EXISTS `t_product_attribute_name`;
 CREATE TABLE `t_product_attribute_name`  (
   `id` int(11) NOT NULL COMMENT '属性表',
@@ -87,9 +95,10 @@ CREATE TABLE `t_product_attribute_name`  (
   `update_time` bigint(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '属性名称表' ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##商品属性值表
+```
 DROP TABLE IF EXISTS `t_product_attribute_value`;
 CREATE TABLE `t_product_attribute_value`  (
   `id` int(11) NOT NULL COMMENT '属性值表主键',
@@ -99,9 +108,10 @@ CREATE TABLE `t_product_attribute_value`  (
   `update_time` bigint(11) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '属性值表' ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##商品分类表
+```
 DROP TABLE IF EXISTS `t_product_category`;
 CREATE TABLE `t_product_category`  (
   `id` int(11) NOT NULL COMMENT '商品分类ID',
@@ -114,9 +124,10 @@ CREATE TABLE `t_product_category`  (
   `update_time` bigint(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品分类表' ROW_FORMAT = Dynamic;
-
+```
 -- ----------------------------
 ##用户表
+```
 DROP TABLE IF EXISTS `t_user_member`;
 CREATE TABLE `t_user_member`  (
   `id` int(11) NOT NULL COMMENT '买家用户id',
@@ -127,8 +138,10 @@ CREATE TABLE `t_user_member`  (
   `update_time` int(13) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+```
 -- ----------------------------
 ##品牌表
+```
 DROP TABLE IF EXISTS `t_product_brand`;
 CREATE TABLE `t_product_brand`  (
   `id` int(11) NOT NULL COMMENT '品牌ID',
@@ -138,3 +151,4 @@ CREATE TABLE `t_product_brand`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '品牌表' ROW_FORMAT = Dynamic;
 
+```
