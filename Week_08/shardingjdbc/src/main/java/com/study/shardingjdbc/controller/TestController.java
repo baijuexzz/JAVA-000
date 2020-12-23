@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.study.shardingjdbc.controller;
 
-import com.example.demo.beans.TestBean;
-import com.example.demo.service.TestService;
+import com.study.shardingjdbc.bean.TestBean;
+import com.study.shardingjdbc.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,22 @@ public class TestController {
 
     @GetMapping("/getList")
     public List getList(){
-        return testService.getList();
+        List<TestBean> list = testService.getList();
+        return list;
+    }
+
+    @GetMapping("/getInfo")
+    public TestBean getInfo(Long id){
+        TestBean te = testService.getInfo(id);
+        return te;
+    }
+
+
+    @GetMapping("/save")
+    public void saveTest(){
+        for (int i = 0; i <1000 ; i++) {
+            testService.save();
+        }
     }
 
 
