@@ -33,7 +33,12 @@ public class TestService {
 
         TestBean testBean = new TestBean();
         testBean.setName(String.valueOf(System.currentTimeMillis() / 1000));
-        testDao.save(testBean);
+        try {
+            testDao.save(testBean);
+        } catch (Exception e) {
+            System.out.println(testBean.getId());
+            e.printStackTrace();
+        }
     }
 
 
