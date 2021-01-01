@@ -1,5 +1,6 @@
 package com.baijue.study;
 
+import com.baijue.study.distributed.Counter;
 import com.baijue.study.distributed.Deduplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,9 @@ class RedisStudyApplicationTests {
 	private Deduplication deduplication;
 
 
+	/**
+	 * 测试ID去重
+	 */
 	@Test
 	public void testDeduplication(){
 		for (int i = 0; i <2 ; i++) {
@@ -24,8 +28,19 @@ class RedisStudyApplicationTests {
 		}
 	}
 
+
+
+	@Autowired
+	private Counter counter;
+
+
+	/**
+	 * 测试商品库存计数器
+	 */
 	@Test
-	void contextLoads() {
+	public void testCounter(){
+		counter.initSkuNumber(2999);
+		counter.testCounter(10,300);
 	}
 
 }
