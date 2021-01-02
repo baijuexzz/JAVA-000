@@ -1,12 +1,20 @@
 # 学习笔记
-> 作业相关记录
->>
+
+###作业相关记录
+- 必做
+  - 在 Java 中实现一个简单的分布式锁  测试用例： com.baijue.study.RedisStudyApplicationTests的testLock方法<br>
+  - 在 Java 中实现一个分布式计数器，模拟减库存 测试用例： com.baijue.study.RedisStudyApplicationTests的testCounter方法
+  - 基于 Redis 的 PubSub 实现订单异步处理 测试用例： com.baijue.study.RedisStudyApplicationTests的testQueue方法
+- 选做
+  - 基于 Bitmap 实现 id 去重  测试用例： com.baijue.study.RedisStudyApplicationTests的testDeduplication方法<br>
+    
+### 相关参考资料
+- <a href="https://www.runoob.com/redis">基本指令学习资料</a>
+- <a href="https://juejin.cn/book/6844733724618129422/section/6844733724702015501">bitmap指令参考资料</a>
+- <a href="http://zhangtielei.com/posts/blog-redlock-reasoning.html">分布式锁参考资料</a>
+
 
 ## 1.Redis 命令学习  只覆盖常用的使用方式
-<a href="https://www.runoob.com/redis">基本指令学习资料</a>
-<br>
-<a href="https://juejin.cn/book/6844733724618129422/section/6844733724702015501">bitmap指令参考资料</a>
-
 ### 1.1 通用指令
 |指令 |描述 |相关参数|
 |:------|:------|:------|
@@ -84,7 +92,7 @@
 |getbit|获取对应位置的值|getbit key offset|
 |bitcount |统计在指定"范围"内为1的值|bitcount key [start stop] (start/stop 指的的byte不是bit )  |
 
-### 1.7 HyperLogLog  有一定误差率的去重 不存储数据本身的信息
+### 1.8 HyperLogLog  有一定误差率的去重 不存储数据本身的信息
 |指令 |描述 |相关参数|
 |:------|:------|:------|
 |pfadd|增加数据|pfadd [element]|

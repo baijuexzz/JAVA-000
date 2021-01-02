@@ -2,6 +2,7 @@ package com.baijue.study;
 
 import com.baijue.study.distributed.Counter;
 import com.baijue.study.distributed.Deduplication;
+import com.baijue.study.distributed.PubSub;
 import com.baijue.study.distributed.RedisDistributedLock;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -56,6 +57,20 @@ class RedisStudyApplicationTests {
 	@Test
 	public void testLock(){
 		redisDistributedLock.doSomething(10,5);
+	}
+
+
+
+	@Autowired
+	private PubSub pubSub;
+
+
+	/**
+	 * PubSub 测试用例
+	 */
+	@Test
+	public void testQueue(){
+		pubSub.testQueue(10000);
 	}
 
 }
