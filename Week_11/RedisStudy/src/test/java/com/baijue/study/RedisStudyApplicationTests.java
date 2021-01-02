@@ -2,6 +2,7 @@ package com.baijue.study;
 
 import com.baijue.study.distributed.Counter;
 import com.baijue.study.distributed.Deduplication;
+import com.baijue.study.distributed.RedisDistributedLock;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,20 @@ class RedisStudyApplicationTests {
 	public void testCounter(){
 		counter.initSkuNumber(2999);
 		counter.testCounter(10,300);
+	}
+
+
+
+	@Autowired
+	private RedisDistributedLock redisDistributedLock;
+
+
+	/**
+	 * 测试分布式锁
+	 */
+	@Test
+	public void testLock(){
+		redisDistributedLock.doSomething(10,5);
 	}
 
 }
