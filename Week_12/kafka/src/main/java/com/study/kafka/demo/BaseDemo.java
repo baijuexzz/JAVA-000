@@ -121,14 +121,14 @@ public class BaseDemo {
         private static Producer<String, String> createProducer() {
             Properties properties = new Properties();
             //设置Broker 的地址
-            properties.put("bootstrap.servers", BROKER_URL);
-            properties.put("acks", "all");
+            properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BROKER_URL);
+            properties.put(ProducerConfig.ACKS_CONFIG,"all");
             //消息的序列化方式
-            properties.put("key.serializer", StringSerializer.class.getName());
-            properties.put("value.serializer", StringSerializer.class.getName());
+            properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+            properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
             if (OPEN_TRANSACTION) {
                 //设置的事务ID为
-                properties.put("transactional.id", "tx00");
+                properties.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "tx00");
             }
             return new KafkaProducer<>(properties);
         }
