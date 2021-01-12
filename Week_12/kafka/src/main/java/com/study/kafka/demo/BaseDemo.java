@@ -79,13 +79,13 @@ public class BaseDemo {
         private static Consumer<String, String> createConsumer() {
             // 设置 Producer 的属性
             Properties properties = new Properties();
-            properties.put("bootstrap.servers", BROKER_URL); // 设置 Broker 的地址
+            properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BROKER_URL); // 设置 Broker 的地址
             properties.put("group.id", DEFAULT_GROUP); // 消费者分组
             properties.put("auto.offset.reset", "earliest"); // 设置消费者分组最初的消费进度为 earliest 。可参考博客 https://blog.csdn.net/lishuangzhe7047/article/details/74530417 理解
             properties.put("enable.auto.commit", true); // 是否自动提交消费进度
             properties.put("auto.commit.interval.ms", "1000"); // 自动提交消费进度频率
-            properties.put("key.deserializer", StringDeserializer.class.getName()); // 消息的 key 的反序列化方式
-            properties.put("value.deserializer", StringDeserializer.class.getName()); // 消息的 value 的反序列化方式
+            properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+            properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
             return new KafkaConsumer<>(properties);
         }
 
