@@ -144,6 +144,8 @@ public class BaseDemo {
                 RecordMetadata result = sendResultFuture.get();
                 log.info("发送的topic为{} 发送的分区为{} 最终的偏移量为{}", result.topic(), result.partition(), result.offset());
             }
+            //关闭资源  不关闭有坑 https://blog.csdn.net/QYHuiiQ/article/details/88757209
+            producer.close();
         }
 
 
